@@ -2,8 +2,7 @@ name: CxAST CLI Action - Scan on Push
 on:
   push:
     branches:
-      - main
-      - master
+      - ksalman-cx-patch-1
 
 jobs:
   build:
@@ -18,8 +17,8 @@ jobs:
           cx_client_id: ${{ secrets.CLIENT_ID }}
           cx_client_secret: ${{ secrets.SECRET }}
           additional_params: --file-filter !readme --report-format sarif --output-name results
-      - name: DustiLock
-        uses: Checkmarx/dustilock@v1.2.0
+   #  - name: DustiLock
+   #    uses: Checkmarx/dustilock@v1.2.0
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v1
         with:
