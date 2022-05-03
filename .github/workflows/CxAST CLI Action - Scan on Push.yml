@@ -2,8 +2,7 @@ name: CxAST CLI Action - Scan on Push
 on:
   push:
     branches:
-      - main
-      - master
+      -ksalman-cx-patch-2
 
 jobs:
   build:
